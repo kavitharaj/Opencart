@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;wrapperclassPractice.java&apos; to &apos;oops/src/wrapperclass&apos;&#x0D;&#x0A;- Original project: &apos;oopsprogrampractice&apos;&#x0D;&#x0A;- Destination element: &apos;oops/src/wrapperclass&apos;&#x0D;&#x0A;- Original element: &apos;wrapperclassPractice.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move file" destination="=oops/src&lt;wrapperclass" element1="wrapperclassPractice.java" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1731840752823" units="0" version="1.0"/>
+</session>

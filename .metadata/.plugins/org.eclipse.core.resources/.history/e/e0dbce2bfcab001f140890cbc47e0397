@@ -1,0 +1,50 @@
+package seleniumwebdriverday1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+import net.bytebuddy.asm.Advice.Enter;
+
+public class testcase1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		/* 1.launch broweser
+		 *  2. open url
+		 *  3. validate title 
+		 *  4. close
+		 *  
+		 */
+		
+     WebDriver driver =new FirefoxDriver();
+    driver.get("https://www.flipkart.com/");
+		//driver.get("https://www.google.co.in/");
+     driver.manage().window().maximize();
+     System.out.println(driver.getTitle());
+     String act_title=driver.getTitle();
+     if(act_title.equalsIgnoreCase("Online Shopping Site for Mobiles, Electronics, Furniture, Grocery, Lifestyle, Books & More. Best Offers!")) {
+    	 System.out.println("test passed");
+     }
+     else {
+    	 System.out.println("test failed");
+     }
+		
+		// 2.26.0
+     // 131 
+     
+	driver.findElement(By.name("q")).sendKeys("mac");
+	
+	
+	
+	
+	
+	}
+	
+	
+
+
+}

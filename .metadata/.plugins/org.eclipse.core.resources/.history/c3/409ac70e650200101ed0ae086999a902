@@ -1,0 +1,12 @@
+package utilities;
+
+import org.testng.ITestContext;
+import org.testng.internal.annotations.ITest;
+
+public class extendReportUtility {
+	
+	public void onStart(ITestContext testContest) {
+		
+	}
+
+}

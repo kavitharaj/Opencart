@@ -1,0 +1,17 @@
+
+package testcases;
+
+import pageObjects.Homepage;
+
+public class tc003_datadrivenlogintest {
+	
+	public void verify_loginddt(){
+		
+		Homepage hp=new Homepage(driver);
+		hp.clickmyaccount();
+		hp.clicklogin();
+		
+		
+	}
+
+}

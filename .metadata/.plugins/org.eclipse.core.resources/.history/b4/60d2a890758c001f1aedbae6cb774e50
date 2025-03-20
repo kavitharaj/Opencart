@@ -1,0 +1,18 @@
+package oops;
+
+public class EmployeeMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Employee emp1=new Employee();
+		emp1.eid=100;
+		emp1.ename="sushanth";
+		emp1.ejob="owner";
+		emp1.salary=12000;
+		
+		emp1.display();
+		
+	}
+
+}

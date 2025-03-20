@@ -1,0 +1,33 @@
+package utilities;
+
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+
+import Baseclass.baseClass;
+
+public class dataProvides  extends baseClass {
+
+
+
+	@DataProvider(name="Login data")
+	
+	public String[][] getdata() throws IOException {
+		String Path= System.getProperty("user.dir")+"\\testdata\\\\logindata.xlsx";
+		excelUtility xlutil=new excelUtility(Path);
+		xlutil.setExcelFile(Path, "Sheet1");
+		int row=xlutil.getRowCountInSheet();
+		int col=xlutil.getcellCountInSheet();
+	    String Logindata[][]=new String[row][col];
+	    for(int i=1;i<=row;i++) {
+	    	
+	    	  for(int c=1;c<col;c++) {
+	    		  Logindata[i-1][c]=xlutil.getCellData(i, c);
+	    	  }
+	    	
+	    }
+		return Logindata;
+		
+	
+}
+}

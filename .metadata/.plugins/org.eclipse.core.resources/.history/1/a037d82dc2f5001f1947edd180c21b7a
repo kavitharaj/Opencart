@@ -1,0 +1,37 @@
+package testNgpackage;
+
+import java.awt.Desktop.Action;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
+
+public class testngpompattern {
+	WebDriver driver;
+	Actions act=new Actions(driver);
+
+	
+	public testngpompattern(WebDriver driver) {
+		// TODO Auto-generated constructor stub
+		this.driver = driver;
+	}
+
+
+	By search_loc=By.xpath("//*[name='q']");
+	
+	public void sendsearchelement(String searchele) {
+		driver.findElement(search_loc).sendKeys(searchele);
+	}
+	
+	public void clickenter() {
+		
+		act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
+	}
+	public void quit() {
+		driver.quit();
+	}
+	
+
+
+}

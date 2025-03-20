@@ -1,0 +1,30 @@
+package wrapperclass;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class exceptionHandling {
+	
+	public static void main(String args[]) throws FileNotFoundException {
+		System.out.println("program started");
+		FileInputStream f=new FileInputStream("c/t");
+		
+		
+		//Scanner sc=new Scanner(System.in);
+		//int num=sc.nextInt();
+	   try {
+		System.out.println("hii");
+	
+	   }
+	   catch(FileNotFoundException f) {
+			System.out.println(f.getMessage());  
+	   }
+	    //catch(ArithmeticException a){
+	    	//  System.out.println("invalid data");
+	   // }
+		
+	    
+	    }		
+	}
+

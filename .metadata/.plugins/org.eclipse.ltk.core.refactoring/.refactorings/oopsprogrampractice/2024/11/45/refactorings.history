@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;oopsprogrampractice.oops.java&apos; to &apos;staticfinalkeyword.java&apos;&#x0D;&#x0A;- Original project: &apos;oopsprogrampractice&apos;&#x0D;&#x0A;- Original element: &apos;oopsprogrampractice.oops.java&apos;&#x0D;&#x0A;- Renamed element: &apos;oopsprogrampractice.staticfinalkeyword.java&apos;" description="Rename compilation unit &apos;oops.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;oopsprogrampractice{oops.java" name="staticfinalkeyword.java" references="false" stamp="1731097346660" version="1.0"/>
+</session>

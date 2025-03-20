@@ -1,0 +1,31 @@
+package utilities;
+
+
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import org.testng.ITestContext;
+import org.testng.internal.annotations.ITest;
+
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+
+public class extendReportUtility {
+	public static String Repname;
+	public ExtentSparkReporter sparkreporter;
+	
+	public void onStart(ITestContext testContest) {
+		
+		String timestamp=new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+		
+		String Repname = "Test Report-"+timestamp+".html";
+		
+		 sparkreporter = new ExtentSparkReporter(".\\reports\\"+Repname);
+		
+			
+		
+		
+		
+	}
+
+}

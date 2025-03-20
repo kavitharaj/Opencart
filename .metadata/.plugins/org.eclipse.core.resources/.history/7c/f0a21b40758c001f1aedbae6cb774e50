@@ -1,0 +1,16 @@
+package oops;
+
+public class Employee {
+
+	int eid;
+	String ename;
+	String ejob;
+	int salary;
+	void display() {
+		System.out.println("Emp id"+ eid);
+		System.out.println("Emp name"+ ename);
+		System.out.println("Emp job"+ ejob);
+		System.out.println("Emp salary"+ salary);
+		
+	}
+}

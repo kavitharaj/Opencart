@@ -1,0 +1,51 @@
+package testcases;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebElement;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import Baseclass.baseClass;
+import pageObjects.Homepage;
+import pageObjects.Loginpage;
+import pageObjects.Myaccountpage;
+
+public class tc002_logintest extends baseClass {
+	
+	@Test
+	public void verify_login() throws IOException {
+		
+		Homepage hp=new Homepage(driver);
+		hp.clickmyaccount();
+		hp.clicklogin();
+		
+	
+		FileReader file=new FileReader(".//src//test//resources//confic.properties");
+		Properties p=new Properties();
+		p.load(file);
+		  
+		Loginpage lp=new Loginpage(driver);
+		lp.setemail(p.getProperty("email"));
+		lp.setpassword(p.getProperty("password"));
+	    lp.clicksubmit();
+	    
+	  
+	    
+	    
+	    Myaccountpage mcc=new Myaccountpage(driver);
+	    boolean targetpage=  mcc.ismyAccountexists();
+	   if(targetpage==true) {
+		   System.out.println("login success");
+		   
+	   }
+	   else {
+		   System.out.println("login failed");
+	   }
+		   
+	}
+
+}

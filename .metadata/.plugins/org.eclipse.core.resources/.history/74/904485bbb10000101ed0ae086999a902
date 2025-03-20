@@ -1,0 +1,51 @@
+package utilities;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.testng.annotations.DataProvider;
+
+public class dataProvides extends excelUtility {
+
+
+	
+
+	public dataProvides(String path) {
+		super(path);
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+	@DataProvider(name="Login data")
+	
+	public String[][] getdata() throws IOException,FileNotFoundException{
+		
+		String logindata[][]= {{"abc123@gmail.com","test@123","valid"},
+				{"abc","123","invalid"}};
+		return logindata;
+		
+/*	
+	public String[][] getdata() throws IOException,FileNotFoundException{
+		
+		 * try { String Path=
+		 * System.getProperty("user.dir")+"\\tetdata\\\\logindata.xlsx"; excelUtility
+		 * xlutil=new excelUtility(Path); xlutil.setExcelFile(Path, "Sheet1");
+		 * 
+		 * int row=xlutil.getRowCountInSheet(); int col=xlutil.getcellCountInSheet();
+		 * String Logindata[][]=new String[row][col]; for(int i=1;i<=row;i++) {
+		 * 
+		 * for(int c=1;c<col;c++) { Logindata[i-1][c]=xlutil.getCellData(i, c); } }
+		 * 
+		 * } catch(FileNotFoundException fe) { System.out.println("FIle not found");
+		 * fe.printStackTrace(); } catch(Exception e) { e.printStackTrace(); } return
+		 * Logindata;
+		 
+		 
+		
+	
+	
+	*/
+	
+	
+	}}

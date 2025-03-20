@@ -1,0 +1,65 @@
+package seleniumwebdriverday1;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class fulldemo {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+		driver.findElement(By.xpath("//*[@id=\"Wikipedia1_wikipedia-search-input\"]")).sendKeys("selenium");
+		driver.findElement(By.cssSelector("input.wikipedia-search-button")).click();
+		List<WebElement> links = driver.findElements(By.xpath("//a[contains(@href,'Selenium')]"));
+		// List<WebElement> links=driver.findElements(By.tagName("a"));
+		System.out.println("number of links be " + links.size());
+		/*
+		 * for (int i = 0; i < links.size(); i++) { System.out.println("link name is " +
+		 * links.get(i).getText());
+		 * 
+		 * links.get(i).click(); String winid = driver.getWindowHandle();
+		 * Thread.sleep(5000);
+		 * 
+		 * String Title = driver.switchTo().window(winid).getTitle();
+		 * System.out.println(Title); if (Title.equals("Selenium ")) {
+		 * System.out.println(driver.getCurrentUrl()); driver.close(); break;
+		 * 
+		 * }
+		 * 
+		 * }
+		 */
+		for (int i = 0; i < links.size(); i++) {
+			//System.out.println("link name is " + links.get(i).getText());
+
+			links.get(i).click();
+			
+			String winid = driver.getWindowHandle();
+			
+
+			String Title = driver.switchTo().window(winid).getTitle();
+			System.out.println(Title);
+			
+			if (Title.equals("Selenium")) {
+				System.out.println(driver.getCurrentUrl());
+				
+				//driver.navigate().back();
+			}
+			
+			
+
+		}
+		//Set<String> windowid = driver.getWindowHandles();
+		//List<String> win=new ArrayList<String>(windowid);
+	}
+}

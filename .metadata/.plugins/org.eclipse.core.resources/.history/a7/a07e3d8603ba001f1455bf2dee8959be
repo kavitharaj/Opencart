@@ -1,0 +1,18 @@
+package seleniumwebdriverday1;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class framesdemo {
+	public static void main(String args[]) {
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://ui.vision/demo/webtest/frames/");
+		
+		driver.switchTo().frame("name5");
+		driver.findElement(By.name("mytext5")).sendKeys("selenium");
+	}
+	
+
+}

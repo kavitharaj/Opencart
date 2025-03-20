@@ -1,0 +1,54 @@
+
+package testcases;
+
+import java.io.IOException;
+
+import org.testng.Assert;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+
+import Baseclass.baseClass;
+import pageObjects.Homepage;
+import pageObjects.Loginpage;
+import pageObjects.Myaccountpage;
+import utilities.dataProvides;
+
+
+public class tc003_datadrivenlogintest extends baseClass {
+
+
+	 @Test(dataProvider="logindata", dataProviderClass = dataProvides.class) 
+	 void verify_loginddt(String email, String pw) throws IOException {
+	
+		Homepage hp = new Homepage(driver);
+		hp.clickmyaccount();
+		hp.clicklogin();
+
+		Loginpage lp = new Loginpage(driver);
+
+		lp.setemail(email);
+		lp.setpassword(pw);
+		lp.clicksubmit();
+		hp.clicklogout();
+
+	/*	Myaccountpage mcc = new Myaccountpage(driver);
+		boolean targetpage = mcc.ismyAccountexists();
+
+		if (targetpage == true) {
+			mcc.clicklogout();
+			Assert.assertTrue(true);}
+		 else
+			Assert.assertTrue(false);
+	 }
+	 */
+	
+		/*
+		 * 
+		 * if (result.equalsIgnoreCase("invalid")) { if (targetpage == true) {
+		 * mcc.clicklogout(); Assert.assertTrue(false); } else Assert.assertTrue(true);
+		 * 
+		 * }
+		 */
+
+
+}

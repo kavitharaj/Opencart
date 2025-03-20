@@ -1,0 +1,10 @@
+package seleniumwebdriverday1;
+
+public class fulldemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

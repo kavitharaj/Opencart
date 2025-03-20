@@ -1,0 +1,19 @@
+package testNgpackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+public class testngpompattern {
+	WebDriver driver;
+
+	testngpompattern() {
+		this.driver = driver;
+
+	}
+	
+	//https://www.google.co.in/
+	By search_loc=By.xpath("//*[name='q']");
+	
+
+
+}

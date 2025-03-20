@@ -1,0 +1,14 @@
+package wrapperclass;
+
+
+import oops.Employee;
+
+public class acceesmain extends Employee {
+		public static void main(String args[]) {
+			access a=new access();
+			a.m1();
+			System.out.println(a.i);
+		}
+	}
+
+

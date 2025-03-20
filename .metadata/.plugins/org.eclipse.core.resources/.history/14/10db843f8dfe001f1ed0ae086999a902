@@ -1,0 +1,22 @@
+
+package testcases;
+
+import org.openqa.selenium.WebDriver;
+
+import pageObjects.BasePage;
+import pageObjects.Homepage;
+
+public class tc003_datadrivenlogintest extends baseClass {
+	
+	
+
+	public void verify_loginddt(){
+		
+		Homepage hp=new Homepage(driver);
+		hp.clickmyaccount();
+		hp.clicklogin();
+		
+		
+	}
+
+}

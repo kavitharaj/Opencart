@@ -1,0 +1,230 @@
+package fullseleniumdemo;
+
+import java.io.File;
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import net.bytebuddy.asm.Advice.Argument;
+
+public class fullSeleniumDemo {
+	public static void main(String args[]) throws InterruptedException {
+
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://testautomationpractice.blogspot.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(2000));
+		WebDriverWait mywait = new WebDriverWait(driver, Duration.ofSeconds(6000));
+		System.out.println("Title of the page is " + driver.getTitle());
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		// enter name textbox
+		WebElement name = driver.findElement(By.id("name"));
+		js.executeScript("arguments[0].setAttribute('value','sushanthsaran')", name);
+		//name.sendKeys("Kavitha R");
+		//String namevalue = name.getAttribute("value");
+		//System.out.println("Name : " + namevalue);
+		//send keys using javascript executor
+	
+		// tab key action
+		Actions act = new Actions(driver);
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// enter email action
+		WebElement email = driver.findElement(By.id("email"));
+		email.sendKeys("Kavitharajtc20@gmail.com");
+		String emailvalue = email.getAttribute("value");
+		System.out.println("Email :" + emailvalue);
+		// tab action
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// enter phone number
+		WebElement phone = driver.findElement(By.id("phone"));
+		phone.sendKeys("7397538132");
+		String phonevalue = phone.getAttribute("value");
+		System.out.println("Phone : " + phonevalue);
+		// enter tab key
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// scrolldown
+		
+		js.executeScript("arguments[0].scrollIntoView();", phone);
+		// enter address text area
+		WebElement address = driver.findElement(By.id("textarea"));
+		address.sendKeys("3/65-2,Kuruvadi ," + '\n' + "Sayalkudi(way), Ramanathapuram.");
+		String addressvalue = address.getAttribute("value");
+		System.out.println("Address : " + addressvalue);
+		// enter tab key
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// select gender radio button female
+		WebElement gender = driver.findElement(By.cssSelector("label[for='female']"));
+		gender.click();
+		String female = gender.getText();
+		if (female == "Female") {
+			System.out.println("Gender : " + "Female");
+		}
+		// enter Tab key
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// select sunday, wednesday checkbox
+		WebElement elesunday = driver.findElement(By.cssSelector("label[for='sunday']"));
+		elesunday.click();
+		String sunday = elesunday.getText();
+		WebElement elewednesday = driver.findElement(By.cssSelector("label[for='wednesday']"));
+		elewednesday.click();
+		String wednesday = elewednesday.getText();
+		System.out.println("Days:" + sunday + '\t' + wednesday);
+		// select county from dropdown
+
+		WebElement drpcounty = driver.findElement(By.id("country"));
+
+		Select optioncountry = new Select(drpcounty);
+		List<WebElement> listcountry = optioncountry.getOptions();
+		System.out.println("country list size is :" + listcountry.size());
+		System.out.println("country lists are ");
+		for (WebElement allcountry : listcountry) {
+			System.out.println(allcountry.getText());
+		}
+		optioncountry.selectByVisibleText("India");
+		WebElement elecountry = optioncountry.getFirstSelectedOption();
+		String country = elecountry.getText();
+		System.out.println("Selected Country :" + country);
+		// select color from dropdown
+		/*
+		 * WebElement drpcolor = driver.findElement(By.id("colors")); Select optioncolor
+		 * = new Select(drpcolor); optioncolor.selectByVisibleText("Yellow"); WebElement
+		 * elecolor = optioncolor.getFirstSelectedOption(); String color =
+		 * elecolor.getText(); System.out.println("Color :" + color);
+		 * js.executeScript("arguments[0].scrollIntoView();", drpcolor); // select
+		 * sorted list dropdown WebElement eleanimals =
+		 * driver.findElement(By.id("animals")); Select optionanimals = new
+		 * Select(eleanimals); List<WebElement> listanimals =
+		 * optionanimals.getOptions(); System.out.println("Anial lists are : "); int
+		 * count = 1; for (WebElement animals : listanimals) { System.out.println(count
+		 * + "--" + animals.getText()); count++; }
+		 * optionanimals.selectByVisibleText("Rabbit"); WebElement elerabbit =
+		 * optionanimals.getFirstSelectedOption(); String rabbit = elerabbit.getText();
+		 * System.out.println("Selected animal is : " + rabbit);
+		 */
+		// click upload file
+		/*
+		 * driver.findElement(By.xpath("//input[@type='file' and @id='singleFileInput']"
+		 * )) .sendKeys("D:\\kavitha\\document\\password.txt");
+		 * driver.findElement(By.xpath("//*[@id='singleFileForm']/button")).click();
+		 * WebElement fileuploadcheck =
+		 * driver.findElement(By.xpath("//*[@id='singleFileStatus']"));
+		 * System.out.println(fileuploadcheck.getText()); if
+		 * (fileuploadcheck.getText().equals("No file selected.")) {
+		 * System.out.println("File not uploaded successfully"); } else {
+		 * System.out.println("File uploaded successfully"); }
+		 * js.executeScript("arguments[0].scrollIntoView();", fileuploadcheck);
+		 */
+		act.keyDown(Keys.TAB).keyUp(Keys.TAB).build().perform();
+		// upload multiple files
+		/*
+		 * String file1 = "D:\\kavitha\\document\\java_coding.txt"; String file2 =
+		 * "D:\\kavitha\\document\\password.txt";
+		 * 
+		 * WebElement multiplefile = driver.findElement(By.
+		 * xpath("//input[@type='file' and @id='multipleFilesInput']"));
+		 * multiplefile.sendKeys(file1 + '\n' + file2); Thread.sleep(4000);
+		 * 
+		 * WebElement multiplefileclick =
+		 * driver.findElement(By.xpath("//*[@id=\"multipleFilesForm\"]/button"));
+		 * multiplefileclick.click(); Thread.sleep(10000); WebElement
+		 * multiplefileuploadcheck =
+		 * driver.findElement(By.xpath("//*[@id='multipleFilesStatus']"));
+		 * mywait.until(ExpectedConditions.visibilityOfAllElements(
+		 * multiplefileuploadcheck)); Thread.sleep(10000);
+		 * System.out.println(multiplefileuploadcheck.getText()); if
+		 * (multiplefileuploadcheck.getText().equals("No files selected.")) {
+		 * System.out.println("File not uploaded successfully"); } else {
+		 * System.out.println("File uploaded successfully"); }
+		 */
+		// scroll into page end and start
+		js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
+		Thread.sleep(3000);
+		js.executeScript("window.scrollBy(0,-document.body.scrollHeight)");
+		// search
+		WebElement search = driver.findElement(By.id("Wikipedia1_wikipedia-search-input"));
+		search.sendKeys("selenium");
+		act.keyDown(Keys.ENTER).keyUp(Keys.ENTER).build().perform();
+		// open all selenium link
+		/*
+		 * List<WebElement> seleniumlink =
+		 * driver.findElements(By.xpath("//a[contains(@href,'Selenium')]"));
+		 * System.out.println("size of selenium link is " + seleniumlink.size()); for
+		 * (int i = 0; i < seleniumlink.size(); i++) { WebElement link =
+		 * seleniumlink.get(i); // String linkname=link.getText(); Thread.sleep(3000);
+		 * link.click();
+		 * 
+		 * } // get window id and move to that window and get title and close the window
+		 * Set<String> windowids = driver.getWindowHandles(); List<String> winid = new
+		 * ArrayList<String>(windowids); String wintarget = winid.get(0); for (String
+		 * win : winid) { System.out.println(win); String title =
+		 * driver.switchTo().window(win).getTitle(); System.out.println(title); if
+		 * (title.startsWith("Selenium")) { driver.close();
+		 * 
+		 * Thread.sleep(2000);
+		 * 
+		 * } }
+		 */
+		// navigate to target page
+		// driver.switchTo().window(wintarget);
+
+		// handling dynamic button
+		WebElement startstop = driver.findElement(By.xpath("//button[contains(@name,'st')]"));
+		startstop.click();
+		String startstopstatus = startstop.getAttribute("name");
+		System.out.println("Start or stop status : " + startstopstatus);
+
+		js.executeScript("arguments[0].scrollIntoView();", startstop);
+		
+		//simple alert using alert method
+		/*
+		 * driver.findElement(By.id("alertBtn")).click(); Thread.sleep(3000); Alert
+		 * acceptsimple=driver.switchTo().alert(); String
+		 * alertsimple=acceptsimple.getText(); System.out.println(alertsimple);
+		 * acceptsimple.accept(); //confirmation alert
+		 * driver.findElement(By.id("confirmBtn")).click(); Thread.sleep(3000); Alert
+		 * acceptconfirm=driver.switchTo().alert(); String
+		 * alertconfirm=acceptconfirm.getText(); System.out.println(alertconfirm);
+		 * //acceptconfirm.accept(); acceptconfirm.dismiss(); //promt alert
+		 * driver.findElement(By.id("promptBtn")).click(); Thread.sleep(3000); Alert
+		 * acceptpromt=driver.switchTo().alert(); // acceptpromt.sendKeys(namevalue);
+		 * String alertpromt=acceptpromt.getText(); System.out.println(alertpromt);
+		 * acceptpromt.accept();
+		 */
+		// mousehover
+		WebElement mouseover=driver.findElement(By.xpath("//button[@class='dropbtn']"));
+		WebElement mobiles=driver.findElement(By.xpath("//a[text()='Mobiles']"));
+		
+		act.moveToElement(mouseover).moveToElement(mobiles).click().build().perform();
+		//doubleclick
+		WebElement field1=driver.findElement(By.id("field1"));
+		field1.clear();
+		Thread.sleep(2000);
+		field1.sendKeys("Kavitha R ");
+		WebElement copytext=driver.findElement(By.xpath("//button[text()='Copy Text']"));
+		act.doubleClick(copytext).build().perform();
+		
+		 
+		
+		  
+
+		
+		
+		
+		
+
+
+	}
+}

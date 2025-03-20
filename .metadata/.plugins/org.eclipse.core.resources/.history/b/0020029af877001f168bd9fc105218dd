@@ -1,0 +1,23 @@
+package practice_projects;
+
+public class Conditional_Statements {
+	
+	public static void main(String args[]) {
+		// largest of three number
+		int a=10;
+		int b=40;
+		int c=20;
+		if(a>b && a>c) {
+			System.out.println("a is greater");
+		}
+		else if(b>a && b>c)
+		{
+			System.out.println("b is greater");
+			
+		}
+		else {
+			System.out.println("c is greater");
+		}
+	}
+
+}
