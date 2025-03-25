@@ -26,7 +26,7 @@ public class hrmLogin extends driverBasePage {
 		txt_password.sendKeys(password);
 		}
 	public void click_submit() {
-		btn_submit.click();;
+		btn_submit.click();
 	}
 	
 

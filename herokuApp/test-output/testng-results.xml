@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-25T20:46:33 GMT" name="Suite" finished-at="2025-03-25T20:46:47 GMT" duration-ms="14186">
+    <groups>
+    </groups>
+    <test started-at="2025-03-25T20:46:33 GMT" name="Test" finished-at="2025-03-25T20:46:47 GMT" duration-ms="14186">
+      <class name="testCases.TC_LO_DataDrivenTest">
+        <test-method is-config="true" signature="setup_method()[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:33 GMT" name="setup_method" finished-at="2025-03-25T20:46:41 GMT" duration-ms="7625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup_method -->
+        <test-method signature="UserName_Password_dataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:44 GMT" name="UserName_Password_dataDrivenTest" data-provider="Login" finished-at="2025-03-25T20:46:45 GMT" duration-ms="1282" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ThisIsNotAPassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[valid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserName_Password_dataDrivenTest -->
+        <test-method signature="UserName_Password_dataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:45 GMT" name="UserName_Password_dataDrivenTest" data-provider="Login" finished-at="2025-03-25T20:46:45 GMT" duration-ms="150" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[ThisIsNotAPassword]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserName_Password_dataDrivenTest -->
+        <test-method signature="UserName_Password_dataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:45 GMT" name="UserName_Password_dataDrivenTest" data-provider="Login" finished-at="2025-03-25T20:46:45 GMT" duration-ms="184" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserName_Password_dataDrivenTest -->
+        <test-method signature="UserName_Password_dataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:45 GMT" name="UserName_Password_dataDrivenTest" data-provider="Login" finished-at="2025-03-25T20:46:45 GMT" duration-ms="168" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[password]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[invalid]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserName_Password_dataDrivenTest -->
+        <test-method signature="UserName_Password_dataDrivenTest(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:45 GMT" name="UserName_Password_dataDrivenTest" data-provider="Login" finished-at="2025-03-25T20:46:47 GMT" duration-ms="1152" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- UserName_Password_dataDrivenTest -->
+        <test-method is-config="true" signature="closewindow()[pri:0, instance:testCases.TC_LO_DataDrivenTest@2767e23c]" started-at="2025-03-25T20:46:47 GMT" name="closewindow" finished-at="2025-03-25T20:46:47 GMT" duration-ms="520" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closewindow -->
+      </class> <!-- testCases.TC_LO_DataDrivenTest -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
+</testng-results>
